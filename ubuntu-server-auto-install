@@ -138,12 +138,18 @@ kickstart-cfg()
 	EOF
 	cat > $1/ks.preseed <<-EOF
 		d-i user-setup/allow-password-weak boolean true
+		# LVM Settings
+		d-i partman-auto/method string lvm
+		d-i partman-lvm/device_remove_lvm boolean true
+		d-i partman-lvm/confirm boolean true
+		d-i partman-lvm/confirm_nooverwrite boolean true
+		# Partition defaults
 		d-i partman/confirm boolean true
 		d-i partman-partitioning/confirm_write_new_label boolean true
 		d-i partman/choose_partition select finish
 		d-i partman/confirm_nooverwrite boolean true
 		d-i pkgsel/include string
-		d-i pkgsel/include string openssh-server
+		d-i pkgsel/include string openssh-server vim curl git
 		#d-i pkgsel/include string openssh-server rabbitmq-server qemu-kvm libvirt-bin
 	EOF
 }

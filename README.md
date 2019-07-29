@@ -6,8 +6,7 @@ Tested with Ubuntu Server 14.04, 16.04, 17.10, 18.04 and 18.10
 
 ## Prerequisites
 
-* Need the isohdpfx.bin from isolinux. To get it, use `sudo apt install isolinux`
-* Need 'xorriso' installed. To get it, use `sudo apt install xorriso -y`
+* Need the isohdpfx.bin from isolinux and 'xorriso'. To get it, use `sudo apt install isolinux xorriso -y`
 
 ## Features
 
